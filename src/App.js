@@ -3,7 +3,8 @@ import { MovieInfo } from "./components/MovieInfo";
 import MovieList from "./components/MovieList";
 import AddMovies from "./components/AddMovies";
 import Filter from "./components/Filter";
-import Nav from './components/Nav'
+import Nav from './components/Nav';
+
 
 function App() {
   const [Movies, setMovies] = useState(MovieInfo);
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Filter setSearch={setSearch} setRate={setRate}/>
+      <Filter setSearch={setSearch} Rate={Rate} setRate={setRate}/>
       <AddMovies Add={Add} />
       <MovieList Movies={Movies} Search={Search} Rate={Rate} />
     </div>

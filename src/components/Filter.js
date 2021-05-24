@@ -1,20 +1,24 @@
 import React from "react";
-import { FormControl } from "react-bootstrap";
+import { Form, Row, Col, FormControl } from "react-bootstrap";
+import StarRating from "./StarRating";
 
-const Filter = ({ setSearch, setRate }) => {
+const Filter = ({ setSearch, Rate, setRate }) => {
   return (
     <div className="filter">
-      <FormControl
-        className="m-3"
-        placeholder="Search by movie title"
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <FormControl
-        className="m-3"
-        placeholder="Search by rating"
-        onChange={(e) => setRate(e.target.value)}
-        onFocus={(e) => setRate("0")}
-      />
+      <Form>
+        <Row>
+          <Col>
+            <FormControl
+              className="m-3"
+              placeholder="Search by movie title"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </Col>
+          <Col>
+            <StarRating Rate={Rate} setRate={setRate} />
+          </Col>
+        </Row>
+      </Form>
     </div>
   );
 };

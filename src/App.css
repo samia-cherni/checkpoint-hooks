@@ -12,6 +12,9 @@
     min-height: 100vh;
     background-color: #BEC3C8;
 }
+input[type="radio"]{
+    display:none;
+}
 .Nav{
     font-family: 'Open Sans', sans-serif;
 }
@@ -20,11 +23,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.filter{
-    height:10%;
-    display:flex;
-    justify-content: space-between;
+.stars{
+    cursor:pointer;
 }
 .add-movies{
-    width: 47%;
+    width: 49%;
 }

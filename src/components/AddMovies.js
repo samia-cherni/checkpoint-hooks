@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Modal, Button, Form,FormControl } from "react-bootstrap";
 
-const AddMovies = ({Add}) => {
+const AddMovies = ({Add,setRate}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleReset =()=> {setShow(false);
+  setRate("0");
+  }
   const [newMovie, setNewMovie] = useState({
     id: Math.random(),
     title: "",
@@ -61,7 +64,7 @@ const AddMovies = ({Add}) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-secondary" onClick={handleClose}>
+          <Button variant="outline-secondary" onClick={handleReset}>
             Close
           </Button>
           <Button variant="outline-success" onClick={()=>Add(newMovie)}>

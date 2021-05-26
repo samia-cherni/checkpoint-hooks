@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Nav />
       <Filter setSearch={setSearch} Rate={Rate} setRate={setRate}/>
-      <AddMovies Add={Add} />
+      <AddMovies Add={Add} setRate={setRate} />
       <MovieList Movies={Movies} Search={Search} Rate={Rate} />
     </div>
   );

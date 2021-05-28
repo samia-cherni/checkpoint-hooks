@@ -14,6 +14,7 @@ const AddMovies = ({Add,setRate}) => {
     description: "",
     posterURL: "",
     rating: "",
+    trailer:""
   });
   const handleChange = (e) => {
     setNewMovie({ ...newMovie, [e.target.id]: e.target.value });
@@ -58,6 +59,14 @@ const AddMovies = ({Add,setRate}) => {
               <FormControl
                   placeholder="Enter rating"
                   id="rating"
+                  onChange={(e) => handleChange(e)}
+                />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Trailer</Form.Label>
+              <FormControl
+                  placeholder="Enter Trailer link"
+                  id="trailer"
                   onChange={(e) => handleChange(e)}
                 />
             </Form.Group>

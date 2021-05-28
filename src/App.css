@@ -18,6 +18,10 @@ input[type="radio"]{
 .Nav{
     font-family: 'Open Sans', sans-serif;
 }
+p{
+    font-weight: bold;
+    color:'grey';
+}
 .list{
     display:flex;
     flex-wrap: wrap;

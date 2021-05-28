@@ -4,6 +4,8 @@ import MovieList from "./components/MovieList";
 import AddMovies from "./components/AddMovies";
 import Filter from "./components/Filter";
 import Nav from './components/Nav';
+import Trailer from './components/Trailer';
+import {Route} from 'react-router-dom';
 
 
 function App() {
@@ -15,10 +17,14 @@ function App() {
   };
   return (
     <div className="App">
+      
       <Nav />
+      <Route exact path="/">
       <Filter setSearch={setSearch} Rate={Rate} setRate={setRate}/>
       <AddMovies Add={Add} setRate={setRate} />
       <MovieList Movies={Movies} Search={Search} Rate={Rate} />
+      </Route>
+      <Route path="/Trailer/:id" render={(props) => <Trailer {...props} Movies={Movies}/>}/>
     </div>
   );
 }

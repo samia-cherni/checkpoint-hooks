@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Modal, Button, Form,FormControl } from "react-bootstrap";
 
-const AddMovies = ({Add,setRate}) => {
+const AddMovies = ({Add,setRate,setSearch}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleReset =()=> {setShow(false);
   setRate("0");
+  setSearch("");
   }
   const [newMovie, setNewMovie] = useState({
     id: Math.random(),

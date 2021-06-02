@@ -5,7 +5,8 @@ import AddMovies from "./components/AddMovies";
 import Filter from "./components/Filter";
 import Nav from './components/Nav';
 import Trailer from './components/Trailer';
-import {Route} from 'react-router-dom';
+import {Route,Switch} from 'react-router-dom';
+import { Fragment } from "react";
 
 
 function App() {
@@ -17,14 +18,17 @@ function App() {
   };
   return (
     <div className="App">
-      
       <Nav />
-      <Route exact path="/">
+      <Switch>
+      <Route exact path="/" render={()=>
+      <Fragment>
       <Filter setSearch={setSearch} Rate={Rate} setRate={setRate}/>
-      <AddMovies Add={Add} setRate={setRate} />
+      <AddMovies Add={Add} setRate={setRate} setSearch={setSearch} />
       <MovieList Movies={Movies} Search={Search} Rate={Rate} />
-      </Route>
-      <Route path="/Trailer/:id" render={(props) => <Trailer {...props} Movies={Movies}/>}/>
+      </Fragment>}
+      />
+      <Route path="/Movies/:id" render={(props) => <Trailer {...props} Movies={Movies}/>}/>
+      </Switch>
     </div>
   );
 }

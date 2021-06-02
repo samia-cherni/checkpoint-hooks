@@ -8,7 +8,7 @@ const MovieCard = ({ Movie }) => {
     const star=parseInt(Movie.rating);
     return (
     <div>
-        <Link to ={`/Trailer/${Movie.id}`} style={{ textDecoration: 'none'}}>
+        <Link to ={`/Movies/${Movie.id}`} style={{ textDecoration: 'none'}}>
         <Card style={{ width: "18rem" }} className="m-3">
         <Card.Img variant="top" src={Movie.posterURL} />
         <Card.Body>
